@@ -18,5 +18,46 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    padding: 12px 20px;
+}
+
+.menu{
+    border-radius: 25px;
+    background-color: white;
+    color:#555555;
+    cursor: pointer;
+    border: 1px solid #555555;
+}
+
+.main{
+    display: flex;
+    gap: 70px;
+    margin-top: 40px;
+}
+
+.to-do-list{
+    background-color: white;
+    padding: 16px;
+    flex: 1;
+    height: 400px;
+    margin-left: 50px;
+}
+
+.focus-timer{
+    background-color: white;
+    padding: 16px;
+    flex: 1;
+    height: 300px;
+    margin-right:50px ;
+}
+
+.progress-section{
+    background-color: white;
+    margin-top: 40px;
+    padding: 16px;
+    height: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
