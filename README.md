@@ -1,2 +1,1 @@
-# Smart-Productivity-Dashboard
-A web-based productivity dashboard with task management, a 25-minute focus timer, and real-time progress tracking,  built with vanilla HTML, CSS, and JavaScript.
+Smart Productivity Dashboard is a clean, functional front-end project that helps users manage daily tasks and stay focused. It features a live clock with dynamic greetings, a Pomodoro-style focus timer, a local-storage-backed task list, and a real-time progress tracker — all built from scratch using vanilla HTML, CSS, and JavaScript with no frameworks or libraries.

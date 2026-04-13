@@ -1,0 +1,22 @@
+*{
+    margin:0px ;
+    padding:0px ;
+    box-sizing:border-box;
+}
+body{
+    background-color:#f0f2f5;
+    font-family: sans-serif;
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
