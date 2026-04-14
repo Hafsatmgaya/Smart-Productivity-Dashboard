@@ -8,11 +8,7 @@ body{
     font-family: sans-serif;
 }
 
-.container{
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
+
 
 .nav-bar{
     display: flex;
@@ -40,9 +36,21 @@ body{
     background-color: white;
     padding: 16px;
     flex: 1;
-    height: 400px;
+    min-height: 400px;
     margin-left: 50px;
 }
+
+.input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.panel-title{
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
 
 .focus-timer{
     background-color: white;
@@ -57,7 +65,16 @@ body{
     margin-top: 40px;
     padding: 16px;
     height: 70px;
-    margin-left: 50px;
-    margin-right: 50px;
+    min-width:fit-content;
+}
+
+.dynamic-greeting{
+    color: #1A2F50;
+}
+
+.task-item{
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 

@@ -6,27 +6,46 @@
     <title>My Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div class="container"></div>
 <body>
+    
     <nav class="nav-bar">
         <button class="menu"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1"/>
 </svg>
 
 </button>
-        <p class="dynamic-greeting">
+        <p class="dynamic-greeting"> ☀️ Good morning, Hafsat </p>
             <h2 class="live-clock"></h2>
-        </p>
+        
     </nav>
 
 <div class="main">
-    <div class="to-do-list"> </div>
+    <div class="to-do-list">
+        <h2 class="panel-title"> To Do List</h2>
+        <div class="input-row">
+        <input type="text"> 
+        <button class="add-task"> Add task</button>
+        </div> 
+        <div class="task-item">
+            <input type="checkbox">
+            <span> Study Javascript</span>
+            <button class="del-btn">🗑</button>
+        </div> 
+        <div class="task-item">
+            <input type="checkbox">
+            <span> Read a book</span>
+            <button class="del-btn">🗑</button>
+         </div>    
+        <div class="task-item">
+            <input type="checkbox">
+            <span> Make breakfast</span>
+            <button class="del-btn">🗑</button> 
+         </div>       
+    </div>
+
         <div class="focus-timer"></div>
 </div>
-
 <div class="progress-section"></div>
-
-</div>
-<a href="script.js"></a>
+<script src="script.js"></script>
 </body>
 </html>
