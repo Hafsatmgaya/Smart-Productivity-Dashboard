@@ -7,9 +7,6 @@ body{
     background-color:#f0f2f5;
     font-family: sans-serif;
 }
-
-
-
 .nav-bar{
     display: flex;
     justify-content: space-between;
@@ -17,7 +14,6 @@ body{
     background-color: white;
     padding: 12px 20px;
 }
-
 .menu{
     border-radius: 25px;
     background-color: white;
@@ -34,32 +30,33 @@ body{
 
 .to-do-list{
     background-color: white;
-    padding: 16px;
     flex: 1;
     min-height: 400px;
     margin-left: 50px;
-}
 
+}
 .input-row {
     display: flex;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
-
 .panel-title{
-    font-size: 16px;
+    font-size: 25px;
     margin-bottom: 12px;
+    background-color: #4a7cc7;
+    height: 50px;
+    color: #f0f2f5;
+    padding: 10px 16px;
 }
-
-
+.todo-content {
+    padding: 16px;
+}
 .focus-timer{
     background-color: white;
-    padding: 16px;
     flex: 1;
     height: 300px;
     margin-right:50px ;
 }
-
 .progress-section{
     background-color: white;
     margin-top: 40px;
@@ -67,14 +64,93 @@ body{
     height: 70px;
     min-width:fit-content;
 }
-
 .dynamic-greeting{
     color: #1A2F50;
+    font-family: 'Poppins', sans-serif;
 }
-
 .task-item{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 50px;
+    margin-bottom: 19px;
+    margin-right: 120px;
 }
+.input-task{
+    height: 50px;
+    width: 450px;
+    border-radius: 8px;
+    border-width: 0.1px;
+    padding-left: 25px;
+}
+input::placeholder{
+    color: #6B8BAE;
+}
+.add-task{
+    height: 50px;
+    width: 190px;
+    background-color: #2F6BB5;
+    color: #f0f2f5;
+    border: none;
+    border-radius: 9px; 
+}
+.task-item span{
+    flex:1;
+}
+.timer{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 60px;
+    color: #1A2F50;
+}
+.timer-btns{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 60px;
+   
+}
+.start-btn{
+    height: 40px;
+    width: 120px;
+    background-color: #2F6BB5;
+    color: #f0f2f5;
+    border: none;
+    border-radius: 9px; 
+}
+.pause-btn{
+    height: 40px;
+    width: 120px;
+    background-color:white;
+    color: #2F6BB5;
+    border-width: 0.5px;
+    border-radius: 9px; 
+}
+.reset-btn{
+    height: 40px;
+    width: 120px;
+    background-color: white; 
+    color: #2F6BB5;
+    border-width: 0.5px;
+    border-radius: 9px; 
+}
+.items-hr {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin: 16px 0;
+}
+.timer-hr{
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin-bottom: 25px;
+}
+.motivation-text{
+    color: #1F3955;
+    background-color: #e2eaff;
+    font-size: 18px;
+    height: 67px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
 
+
+}
