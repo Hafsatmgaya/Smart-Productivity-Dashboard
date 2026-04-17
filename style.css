@@ -171,6 +171,11 @@ input::placeholder{
     color: #123A69;
     font-weight: 700;
 }
+.progress-text {
+    margin-left: 10px;
+    font-weight: 400;
+    color: #555555;
+}
 @media (max-width: 768px) {
     .main{
         flex-direction: column;
