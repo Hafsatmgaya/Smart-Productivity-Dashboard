@@ -14,6 +14,15 @@ body{
     background-color: white;
     padding: 12px 20px;
 }
+.dynamic-greeting{
+    color: #1A2F50;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+.live-clock{
+    color:#35567F;
+    font-size: 30px;
+}
 .menu{
     border-radius: 25px;
     background-color: white;
@@ -45,7 +54,7 @@ body{
     font-size: 25px;
     margin-bottom: 12px;
     background-color: #4a7cc7;
-    height: 50px;
+    min-height: 50px;
     color: #f0f2f5;
     padding: 10px 16px;
 }
@@ -55,19 +64,15 @@ body{
 .focus-timer{
     background-color: white;
     flex: 1;
-    height: 300px;
+    min-height: 300px;
     margin-right:50px ;
 }
 .progress-section{
     background-color: white;
     margin-top: 40px;
     padding: 16px;
-    height: 70px;
+    min-height: 70px;
     min-width:fit-content;
-}
-.dynamic-greeting{
-    color: #1A2F50;
-    font-family: 'Poppins', sans-serif;
 }
 .task-item{
     display: flex;
@@ -111,25 +116,17 @@ input::placeholder{
    
 }
 .start-btn{
-    height: 40px;
-    width: 120px;
+    min-height: 40px;
+    min-width: 120px;
     background-color: #2F6BB5;
     color: #f0f2f5;
     border: none;
     border-radius: 9px; 
 }
-.pause-btn{
-    height: 40px;
-    width: 120px;
+.pause-btn, .reset-btn{
+    min-height: 40px;
+    min-width: 120px;
     background-color:white;
-    color: #2F6BB5;
-    border-width: 0.5px;
-    border-radius: 9px; 
-}
-.reset-btn{
-    height: 40px;
-    width: 120px;
-    background-color: white; 
     color: #2F6BB5;
     border-width: 0.5px;
     border-radius: 9px; 
@@ -148,7 +145,7 @@ input::placeholder{
     color: #1F3955;
     background-color: #e2eaff;
     font-size: 18px;
-    height: 67px;
+    min-height: 67px;
     text-align: center;
     margin-top: 20px;
     padding-top: 20px;
@@ -173,4 +170,53 @@ input::placeholder{
 .progress-label{
     color: #123A69;
     font-weight: 700;
+}
+@media (max-width: 768px) {
+    .main{
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .to-do-list {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .focus-timer {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .progress-section {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .input-task{
+        width: 100%;
+    }
+    .add-task{
+        width: 120px;
+    }
+    .task-item{
+        gap: 10px;
+        margin-right: 0;
+    }
+    .timer{
+        font-size: 40px;
+    }
+    .timer-btns{
+        gap:10px;
+    }
+    .start-btn, .pause-btn, .reset-btn{
+        min-width: 80px;
+    }
+    .dynamic-greeting{
+        font-size: 15px;
+    }
+    .live-clock{
+        font-size: 15px;
+        padding-right: 2px;
+    }
+    .nav-bar{
+        text-align: center;
+    }
 }
