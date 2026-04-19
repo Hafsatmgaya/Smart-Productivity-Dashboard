@@ -64,7 +64,7 @@ body{
 .focus-timer{
     background-color: white;
     flex: 1;
-    min-height: 300px;
+    height: 300px;
     margin-right:50px ;
 }
 .progress-section{

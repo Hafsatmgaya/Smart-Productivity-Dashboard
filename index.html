@@ -23,8 +23,9 @@
         <div class="todo-content">
         <div class="input-row">
         <input type="text" class="input-task" placeholder="Add a new task..."> 
-        <button class="add-task"> Add task</button>
+        <button class="add-task" onclick="addTasks()"> Add task</button>
         </div> 
+        <div id="task-list">
         <div class="task-item">
             <input type="checkbox">
             <span> Study Javascript</span>
@@ -43,6 +44,7 @@
             <button class="del-btn">🗑</button> 
          </div>       
          </div>
+         </div>
     </div>
 
         <div class="focus-timer">
@@ -50,9 +52,9 @@
             <h1 class="timer">25:00</h1>
             <hr class="timer-hr">
             <div class="timer-btns">
-            <button class="start-btn">Start</button>
-            <button class="pause-btn">Pause</button>
-            <button class="reset-btn">Reset</button>
+            <button class="start-btn"  onclick="startTimer()">Start</button>
+            <button class="pause-btn"  onclick="pauseTimer()">Pause</button>
+            <button class="reset-btn"  onclick="resetTimer()">Reset</button>
             </div>
             <div class="motivation-text">Focus time 👍 Stay consistent </div>
         </div>    
