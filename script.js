@@ -64,10 +64,15 @@ function addTasks() {
 
 function displayTasks() {
     document.querySelector("#task-list").innerHTML = "";
-    tasks.forEach(function(task) {
+    tasks.forEach(function(task, index) {
         let taskDiv = document.createElement("div");
-        taskDiv.innerHTML = "<input type = 'checkbox'>" + "<span>" + task.text + "</span>" + "<button>🗑</button>" ;
+        taskDiv.innerHTML = "<input type = 'checkbox'>" + "<span>" + task.text + "</span>" + "<button onclick = 'deleteTasks("+ index +")'>🗑</button>" ;
         taskDiv.className = "task-item"
         document.querySelector("#task-list").appendChild(taskDiv)
     });
 }
+function deleteTasks(index) {
+    tasks.splice(index,1)
+    displayTasks();
+}
+
