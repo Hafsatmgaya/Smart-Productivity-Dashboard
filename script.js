@@ -60,6 +60,7 @@ function addTasks() {
     tasks.push({text: userInput, done: false})
     document.querySelector(".input-task").value = ""
     displayTasks();
+    updateProgress();
 }
 
 function displayTasks() {
@@ -77,10 +78,21 @@ function displayTasks() {
 function deleteTasks(index) {
     tasks.splice(index,1)
     displayTasks();
+    updateProgress();
 }
 function checkTasks(index) {
-
     tasks[index].done = !tasks[index].done
     displayTasks();
+    updateProgress();
 }
-
+function updateProgress() {
+    let doneTasks = tasks.filter(function(task) {
+    return task.done === true;
+    }).length
+    if (tasks.length === 0) {
+        return;
+    }
+    let progressPercentage = doneTasks/tasks.length * 100;
+    document.querySelector(".progress-bar-fill").style.width = progressPercentage + "%";
+    document.querySelector(".progress-text").textContent = doneTasks + " of " + tasks.length + "completed";
+}
