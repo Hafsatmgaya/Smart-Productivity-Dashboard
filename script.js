@@ -66,13 +66,21 @@ function displayTasks() {
     document.querySelector("#task-list").innerHTML = "";
     tasks.forEach(function(task, index) {
         let taskDiv = document.createElement("div");
-        taskDiv.innerHTML = "<input type = 'checkbox'>" + "<span>" + task.text + "</span>" + "<button onclick = 'deleteTasks("+ index +")'>🗑</button>" ;
+       let textStyle = task.done? "text-decoration:line-through" : ""; 
+       let isChecked = task.done? "checked" : "";
+        taskDiv.innerHTML = "<input type='checkbox' " + isChecked + " onclick='checkTasks(" + index + ")'>" +
+         "<span style='" + textStyle + "'>" + task.text + "</span>" + "<button onclick='deleteTasks(" + index + ")'>🗑</button>";
         taskDiv.className = "task-item"
-        document.querySelector("#task-list").appendChild(taskDiv)
+        document.querySelector("#task-list").appendChild(taskDiv);
     });
 }
 function deleteTasks(index) {
     tasks.splice(index,1)
+    displayTasks();
+}
+function checkTasks(index) {
+
+    tasks[index].done = !tasks[index].done
     displayTasks();
 }
 
