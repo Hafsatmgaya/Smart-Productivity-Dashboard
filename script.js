@@ -1,4 +1,8 @@
-let userName = prompt("Enter your name: ");
+let userName = localStorage.getItem("userName");
+if (userName === null) {
+    userName = prompt("Enter your name");
+    localStorage.setItem("userName", userName);
+}
 function liveClock() {
     let now = new Date();
     let rawHours = now.getHours();
@@ -25,22 +29,37 @@ setInterval(liveClock, 1000);
 
 let totalSeconds = 1500;
 let timerInterval = null;
+let savedSeconds = localStorage.getItem("totalSeconds");
+if (savedSeconds !== null) {
+    totalSeconds = Number(savedSeconds);
+    let minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+    let seconds = String(totalSeconds % 60).padStart(2, "0");
+    document.querySelector(".timer").textContent = minutes + ":" + seconds;
+    
+    let savedRunning = localStorage.getItem("timerRunning");
+    if (savedRunning === "true") {
+        startTimer();
+    }
+}
 function startTimer() {
     if (timerInterval != null) {
         return;
     }
-    timerInterval = setInterval(function() {
+        timerInterval = setInterval(function() {
         totalSeconds = totalSeconds - 1;
         let minutes = String(Math.floor(totalSeconds/60)).padStart(2,"0");
         let seconds = String(totalSeconds % 60).padStart(2, "0");
         let timerString = minutes + ":" + seconds;
         document.querySelector(".timer").textContent = timerString
+        localStorage.setItem("totalSeconds", totalSeconds);
+        localStorage.setItem("timerRunning", "true");
     }, 1000)
 }
 
 function pauseTimer() {
     clearInterval (timerInterval);
     timerInterval = null;
+    localStorage.setItem("timerRunning", "false");
 }
 
 function resetTimer () {
@@ -49,9 +68,17 @@ function resetTimer () {
     timerInterval = null;
     totalSeconds = 1500;
     document.querySelector(".timer").textContent = "25:00"; 
+    localStorage.setItem("timerRunning", "false");
+    localStorage.setItem("totalSeconds", 1500);
 }
 
 let tasks = [];
+let savedTasks = localStorage.getItem("tasks");
+if (savedTasks != null) {
+    tasks = JSON.parse(savedTasks);
+    displayTasks();
+    updateProgress();
+}
 function addTasks() {
     let userInput = document.querySelector(".input-task").value;
     if (userInput === "") {
@@ -61,6 +88,7 @@ function addTasks() {
     document.querySelector(".input-task").value = ""
     displayTasks();
     updateProgress();
+    saveTasks();
 }
 
 function displayTasks() {
@@ -79,11 +107,13 @@ function deleteTasks(index) {
     tasks.splice(index,1)
     displayTasks();
     updateProgress();
+    saveTasks();
 }
 function checkTasks(index) {
     tasks[index].done = !tasks[index].done
     displayTasks();
     updateProgress();
+    saveTasks();
 }
 function updateProgress() {
     let doneTasks = tasks.filter(function(task) {
@@ -94,5 +124,8 @@ function updateProgress() {
     }
     let progressPercentage = doneTasks/tasks.length * 100;
     document.querySelector(".progress-bar-fill").style.width = progressPercentage + "%";
-    document.querySelector(".progress-text").textContent = doneTasks + " of " + tasks.length + "completed";
+    document.querySelector(".progress-text").textContent = doneTasks + " of " + tasks.length + " completed";
+}
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
