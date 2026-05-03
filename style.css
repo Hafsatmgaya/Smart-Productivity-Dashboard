@@ -159,7 +159,7 @@ input::placeholder{
 .progress-bar-fill{
     background-color: #4caf50;
     border-radius: 99px;
-    width: 66%;
+    width: 0%;
     height: 100%;
 }
 .progress-section{
@@ -223,5 +223,5 @@ input::placeholder{
     }
     .nav-bar{
         text-align: center;
-    }
+}
 }

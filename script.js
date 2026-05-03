@@ -15,7 +15,6 @@ function liveClock() {
     }else ampm =" PM";
     let timeString = hours + ":" + minutes + ":" + seconds + ampm;
     document.querySelector(".live-clock").textContent = timeString;
-
     let dynamicGreeting = "";
     if ( rawHours < 12) {
         dynamicGreeting = "Good Morning, ";   
